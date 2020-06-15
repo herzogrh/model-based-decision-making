@@ -385,6 +385,34 @@ def get_model_for_problem_formulation(problem_formulation_id):
                 ScalarOutcome('Evacuation Costs',
                           variable_name=[var for var in evacuation_costs],
                           function=sum_over, kind=ScalarOutcome.MINIMIZE)]
+        
+        # 7-Objectives PF:
+    elif problem_formulation_id == 8:
+        outcomes = []
+        dikeDeventer = function.dikelist[len(function.dikelist)-1]
+        
+        for n in function.planning_steps:
+        
+            outcomes.append(ScalarOutcome('Expected Number of Deaths',
+                          variable_name=['{}_Expected Number of Deaths'.format(dike)
+                                         for dike in function.dikelist],function=sum_over, kind=direction))
+        
+            outcomes.append(ScalarOutcome('RfR Total Costs', kind=direction))
+            outcomes.append(ScalarOutcome('Expected Evacuation Costs', kind=direction))
+        
+            outcomes.append(ScalarOutcome('Gelderland Dike Investment Costs', variable_name=['{}_Dike Investment Costs'.format(dike)
+                                         for dike in function.dikelist[0:len(function.dikelist)-1]], function=sum_over, kind=direction))
+                      
+            outcomes.append(ScalarOutcome('OverIjsel Dike Investment Costs', variable_name=['{}_Dike Investment Costs'.format(dikeDeventer)],
+                                      kind=direction))
+                        
+            outcomes.append(ScalarOutcome('Gelderland Expected Annual Damage', variable_name=['{}_Expected Annual Damage'.format(dike)
+                                         for dike in function.dikelist[0:len(function.dikelist)-1]], function=sum_over, kind=direction))
+                        
+            outcomes.append(ScalarOutcome('OverIjsel Expected Annual Damage', variable_name=['{}_Expected Annual Damage'.format(dikeDeventer)],
+                                      kind=direction))
+                        
+        dike_model.outcomes = outcomes      
 
     else:
         raise TypeError('unknownx identifier')
