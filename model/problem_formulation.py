@@ -341,12 +341,12 @@ def get_model_for_problem_formulation(problem_formulation_id):
         for n in function.planning_steps:
             
             #Damage  
-            damage_a1_a2.extend(['A.4_Expected Annual Damage {}'.format(n)])
-            damage_a3.extend(['A.5_Expected Annual Damage {}'.format(n)])
+            damage_a4.extend(['A.4_Expected Annual Damage {}'.format(n)])
+            damage_a5.extend(['A.5_Expected Annual Damage {}'.format(n)])
 
             #Casualties
-            casualties_a1_a2.extend(['A.4_Expected Number of Deaths {}'.format(n)])
-            casualties_a3.extend(['A.5_Expected Number of Deaths {}'.format(n)])
+            casualties_a4.extend(['A.4_Expected Number of Deaths {}'.format(n)])
+            casualties_a5.extend(['A.5_Expected Number of Deaths {}'.format(n)])
 
             #Costs
             for dike in function.dikelist:
@@ -358,20 +358,20 @@ def get_model_for_problem_formulation(problem_formulation_id):
             evacuation_costs.extend(['Expected Evacuation Costs {}'.format(n)])
 
         dike_model.outcomes = [
-                    ScalarOutcome('A4 Expected Annual Damage',
-                          variable_name=[var for var in damage_a1_a2],
+                ScalarOutcome('A4 Expected Annual Damage',
+                          variable_name=[var for var in damage_a4],
                           function=sum_over, kind = ScalarOutcome.MINIMIZE),
 
                 ScalarOutcome('A5 Expected Annual Damage',
-                          variable_name=[var for var in damage_a3],
+                          variable_name=[var for var in damage_a5],
                           function=sum_over, kind=ScalarOutcome.MINIMIZE),
 
                 ScalarOutcome('A4 Expected Number of Deaths',
-                          variable_name=[var for var in casualties_a1_a2],
+                          variable_name=[var for var in casualties_a4],
                           function=sum_over, kind=ScalarOutcome.MINIMIZE),
                           
-                ScalarOutcome('A5 Aggr Expected Number of Deaths',
-                          variable_name=[var for var in casualties_a3],
+                ScalarOutcome('A5 Expected Number of Deaths',
+                          variable_name=[var for var in casualties_a5],
                           function=sum_over, kind=ScalarOutcome.MINIMIZE),
                           
                 ScalarOutcome('A1_5 Dike Investment Costs',
