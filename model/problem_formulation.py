@@ -386,7 +386,7 @@ def get_model_for_problem_formulation(problem_formulation_id):
                           variable_name=[var for var in evacuation_costs],
                           function=sum_over, kind=ScalarOutcome.MINIMIZE)]
         
-        # 7-Objectives PF:
+        # 7-Objectives PF Holistic View:
     elif problem_formulation_id == 8:
    
         casualties = []
@@ -425,7 +425,7 @@ def get_model_for_problem_formulation(problem_formulation_id):
                           variable_name=[var for var in gelderland_expected_damage],
                           function=sum_over, kind = ScalarOutcome.MINIMIZE),
 
-                ScalarOutcome('Overijssel Annual Damage',
+                ScalarOutcome('Overijssel Expected Annual Damage',
                           variable_name=[var for var in overijssel_expected_damage],
                           function=sum_over, kind=ScalarOutcome.MINIMIZE),
 
