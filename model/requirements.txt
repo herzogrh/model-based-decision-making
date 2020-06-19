@@ -1,0 +1,11 @@
+ema_workbench
+
+pandas
+numpy
+networkx
+scipy
+copy
+
+plotly.express
+seaborn
+matplotlib.pyplot
