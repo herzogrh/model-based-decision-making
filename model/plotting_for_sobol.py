@@ -49,6 +49,7 @@ def filter(sobol_indices, names, locs, criterion, threshold):
 
 def plot_sobol_indices(sobol_indices, problem, criterion='ST', threshold=0.01):
     '''plot sobol indices on a radial plot
+    
     Parameters
     ----------
     sobol_indices : dict
@@ -56,6 +57,7 @@ def plot_sobol_indices(sobol_indices, problem, criterion='ST', threshold=0.01):
     criterion : {'ST', 'S1', 'S2', 'ST_conf', 'S1_conf', 'S2_conf'}, optional
     threshold : float
                 only visualize variables with criterion larger than cutoff
+                
     '''
     max_linewidth_s2 = 15
     max_s_radius = 0.3
@@ -110,7 +112,7 @@ def plot_sobol_indices(sobol_indices, problem, criterion='ST', threshold=0.01):
         name1, loc1 = name1
         name2, loc2 = name2
 
-        weight = s2.ix[name1, name2]
+        weight = s2.loc[name1, name2]
         lw = 0.5+max_linewidth_s2*normalize(weight, s2min, s2max)
         ax.plot([loc1, loc2], [1,1], c='darkgray', lw=lw, zorder=1)
 

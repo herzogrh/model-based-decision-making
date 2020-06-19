@@ -1,0 +1,12 @@
+ema_workbench
+platypus-opt
+
+pandas
+numpy
+networkx
+scipy
+copy
+
+plotly.express
+seaborn
+matplotlib.pyplot
