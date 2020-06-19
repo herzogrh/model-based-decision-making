@@ -1,2 +1,7 @@
-# model-based-decision-making
-Repository for the project of the Engineering and Policy Analysis Course 1361 Model Based Decision Making. 
+# River modelling: Gelderland
+This is the corresponding GitHub repository to the EPA1323 Model-Based Decision Making Class in the academic year of 2019/2020 of TU Delft. 
+
+## Introduction
+
+This 
+
