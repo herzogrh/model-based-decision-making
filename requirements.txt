@@ -1,4 +1,5 @@
 ema_workbench
+platypus-opt
 
 pandas
 numpy
