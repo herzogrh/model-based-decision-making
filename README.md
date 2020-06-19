@@ -27,7 +27,7 @@ The main results obtained from this analysis can be found in several Jupyter Not
 1. `1 - Open Exploration.ipynb`: This notebook shows the results of an open exploration approach of the model
 2. `2 - Multi-Scenario MORDM Gelderland.ipynb`: This notebook shows the results of a Multi-Scenario MORDM approach run on a problem formulation tailored to the province of Gelderland.
 3. `3 - Multi-Scenario MORDM Overijssel.ipynb`: This notebook shows the results of a Multi-Scenario MORDM approach run on a problem formulation tailored to the province of Overijssel.
-4. `4 - Multi-Scenario MORDM Holistic View.ipynb`: This notebook shows the results of a Multi-Scenario MORDM approach run on a problem formulation trying to optimize overall outcomes for both provinces.
+4. `4 - Multi-Scenario MORDM Holistic.ipynb`: This notebook shows the results of a Multi-Scenario MORDM approach run on a problem formulation trying to optimize overall outcomes for both provinces.
 5. `5 - Sensitivity Analysis.ipynb`: This notebook shows the results of a sensitivity analysis using OLS-Regression and SOBOL to discover possible leverages in negotiations.
 
 ### Directory structure
@@ -39,7 +39,7 @@ The main results obtained from this analysis can be found in several Jupyter Not
     ------ 1 - Open Exploration.ipynb
     ------ 2 - Multi-Scenario MORDM Gelderland.ipynb
     ------ 3 - Multi-Scenario MORDM Overijssel.ipynb
-    ------ 4 - Multi-Scenario MORDM Holistic View.ipynb
+    ------ 4 - Multi-Scenario MORDM Holistic.ipynb
     ------ 5 - Global Sensitivity Analysis.ipynb
 
     results\
